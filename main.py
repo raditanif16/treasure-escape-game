@@ -22,7 +22,6 @@ start_button = Rect(300, 200, 400, 60)
 sound_button = Rect(200, 290, 600, 60)
 exit_button = Rect(300, 380, 400, 60)
 
-# Variabel level
 platforms = []
 enemies = []
 treasure = Actor("chest")
@@ -72,7 +71,6 @@ class Player:
         
         self.speed = 5
         self.velocity_y = 0
-        # DIPERBARUI: Gravitasi lebih kecil & lompatan lebih kuat agar sangat mudah
         self.gravity = 0.5  
         self.jump_power = -14 
         self.on_ground = True
@@ -181,7 +179,6 @@ class Enemy:
 
 player = Player()
 
-# --- SISTEM LEVEL YANG SUDAH DIPERMUDAH TOTAL ---
 def load_level(level):
     global platforms, enemies
     
@@ -190,13 +187,11 @@ def load_level(level):
     player.actor.image = "player_idle1"
     
     if level == 1:
-        # Pagi: Pijakan sangat lebar, musuh sangat lambat
         platforms = [Rect(150, 380, 150, 20), Rect(400, 280, 150, 20), Rect(650, 180, 150, 20), Rect(850, 100, 120, 20)]
         enemies = [Enemy(300, GROUND_Y, 2), Enemy(600, GROUND_Y, 2), Enemy(850, GROUND_Y, 2)]
         treasure.bottomleft = (880, platforms[3].top)
         
     elif level == 2:
-        # Senja: DIPERBARUI! Bentuk zig-zag rapi. Sangat lebar (180px) & jarak aman.
         platforms = [
             Rect(200, 400, 180, 20), # Pijakan 1 (Kiri)
             Rect(500, 300, 180, 20), # Pijakan 2 (Kanan)
@@ -207,7 +202,6 @@ def load_level(level):
         treasure.bottomleft = (550, platforms[3].top)
         
     elif level == 3:
-        # Malam: Jarak pijakan dekat & lebar agar tidak jatuh
         platforms = [Rect(150, 400, 130, 20), Rect(350, 320, 130, 20), Rect(550, 240, 130, 20), Rect(750, 160, 130, 20), Rect(900, 80, 100, 20)]
         enemies = [Enemy(300, GROUND_Y, 2.5), Enemy(550, GROUND_Y, 2.5), Enemy(800, GROUND_Y, 2.5)]
         treasure.bottomleft = (920, platforms[4].top)
