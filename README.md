@@ -1,5 +1,4 @@
 # Treasure Escape
-
 Treasure Escape is a 2D platformer game developed using Python and Pygame Zero.
 
 ## Features
@@ -19,4 +18,4 @@ SPACE / ↑ : Jump
 - Pygame Zero
 
 ## Run
-pgzrun main.py
+python3 -m pgzero main.py
